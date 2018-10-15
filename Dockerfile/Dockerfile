@@ -4,7 +4,8 @@ USER root
 
 RUN mkdir /ocp/ && \
     yum install -y git ansible-galaxy && \
-    ansible-galaxy install -r casl-requirements.yml -p galaxy && \
     yum clean all
 
 COPY . /ocp
+
+RUN cd /ocp/ && ansible-galaxy install -r casl-requirements.yml -p galaxy
