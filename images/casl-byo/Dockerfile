@@ -3,7 +3,7 @@ FROM openshift3/ose-ansible:v3.11
 USER root
 
 RUN mkdir /ocp/ && \
-    yum install -y git ansible-galaxy && \
+    yum install -y ansible-galaxy && \
     yum clean all
 
 COPY . /ocp
